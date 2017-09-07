@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock, Paper, Scissors Firebase Game!</title>
+	<link href="assets/css/reset.css">
+	<!--import jQuery-->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!--import bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!--link to style.css-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+
+	<div class="container">
+		<!--header for game page-->
+		<div class="jumbotron text-center">Rock, Paper, Scissors</div>
+		
+		<!--input for player to set their name-->
+		<input  type="text" id="playerName">
+		<button id="setPlayer">Set Player Name</button>
+		
+		<!--place to show player names-->
+		<div id="player1"></div>
+		<div id="player2"></div>
+		
+		<!--buttons for game play-->
+		<button id = "startGame" class="btn btn-primary">Play Game</button>
+		<button id = "endGame" class="btn btn-danger">End Game</button>
+		
+		<!--game choices - rock, paper, scissors-->
+		<div id = "choices">
+			<p id="rock">ROCK</p>
+			<p id="paper">PAPER</p>
+			<p id="scissors">SCISSORS</p>
+		</div>
+		
+		<!--display game choices for players-->
+		<div id = "userChoice"></div>
+		<div id = "opponentChoice"></div>
+		
+		<!--display results of game-->
+		<div id = "result"></div>		
+		<div id = "stats">
+			<p id = "wins">Wins:</p>
+			<p id = "losses">Losses:</p>
+		</div>				
+		
+		<!--conversation buttons and inputs-->
+		<button id = "startConvo" class="btn btn-primary">Start Conversation</button>
+		<textarea type="text" id="textmsg"></textarea>
+		<button id="sendText">Send Text Message</button>
+		<button id = "endConvo">End Conversation</button>
+
+		<!--display for sent texts-->
+		<div id="textBox"></div>
+		
+	</div>
+		
+		<!--incoming messages modal-->
+		<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+			    <div class="modal-body text-center">
+					<button class = "btn btn-primary" type="button" data-dismiss="modal" aria-hidden="true" id ="msgRcvd">Accept Incoming Message(s)?</button>
+				</div>
+			</div>
+		  </div>
+		</div>
+
+		<!--warning message for player name already chosen-->
+		<div id="warningModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+			    <div class="modal-body text-center">
+			    	Player name already chosen! Please choose a different name.
+			    	<button class="btn btn-danger" type="button" data-dismiss="modal" aria-hidden="true" id="chooseName"> Choose Different Name</button>
+				</div>
+			</div>
+		  </div>
+		</div>
+
+	<!--firebase js script-->
+	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+	
+	<!--game js script-->
+	<script src="assets/js/game.js"></script>
+</body>
+</html>
